@@ -19,20 +19,24 @@ export class NewsReaderComponent implements OnInit {
     newsService.message.subscribe(msg => {
       console.log('response from websocket:', msg);
       if (msg.method === 'news') {
-        this.newsArray.push(msg.data);
-        if (this.channels.indexOf(msg.data.publisherId) === -1) {
-          this.channels.push(msg.data.publisherId);
-
-          if (this.currentChannel === msg.data.publisherId) {
-            this.unreadNewsCount += 1;
-          }
-        }
+        this.setupMsg(msg);
       }
       console.log(this.newsArray);
     });
   }
 
   ngOnInit() {
+  }
+
+  setupMsg(msg) {
+    this.newsArray.push(msg.data);
+    if (this.channels.indexOf(msg.data.publisherId) === -1) {
+      this.channels.push(msg.data.publisherId);
+
+      if (this.currentChannel === msg.data.publisherId) {
+        this.unreadNewsCount += 1;
+      }
+    }
   }
 
   getChannelNews(channel) {

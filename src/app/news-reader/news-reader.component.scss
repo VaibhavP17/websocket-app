@@ -1,6 +1,14 @@
-.publishers-list {
+.reader-container {
   display: grid;
-  width: 300px;
+  grid-template-columns: 30% auto;
+  grid-column-gap: 50px;
+  height: 100vh;
+}
+
+.publishers-list {
+  border: 1px solid black;
+  height: 100%;
+  display: grid;
   float: left;
 
   li {
@@ -16,7 +24,6 @@
 
 .news-items {
   display: grid;
-  width: 500px;
   float: right;
   border: 1px solid black;
   height: 100%;

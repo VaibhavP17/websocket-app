@@ -1,9 +1,11 @@
-<section class="publishers-list">
-  <li *ngFor="let channel of channels" (click)="getChannelNews(channel)">{{channel}}
-  <span *ngIf="unreadNewsCount > 0 && channel == currentChannel" class="count">{{unreadNewsCount}}</span>
-  </li>
-</section>
+<div class="reader-container">
+  <section class="publishers-list">
+    <li *ngFor="let channel of channels" (click)="getChannelNews(channel)">{{channel}}
+      <span *ngIf="unreadNewsCount > 0 && channel == currentChannel" class="count">{{unreadNewsCount}}</span>
+    </li>
+  </section>
 
-<section class="news-items">
-  <li *ngFor="let new of news" [class]="{'read': isRead}">{{new.text}}</li>
-</section>
+  <section class="news-items">
+    <li *ngFor="let new of news" [class]="{'read' : new.isRead}">{{new.text}}</li>
+  </section>
+</div>
