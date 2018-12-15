@@ -1,0 +1,34 @@
+.publishers-list {
+  display: grid;
+  width: 300px;
+  float: left;
+
+  li {
+    padding : 5px;
+  }
+
+  .count {
+    font-weight: bold;
+    background-color: red;
+  }
+}
+
+
+.news-items {
+  display: grid;
+  width: 500px;
+  float: right;
+  border: 1px solid black;
+  height: 100%;
+
+  li {
+    padding: 5px;
+    font-weight: bold;
+  }
+
+  &.read {
+    font-weight: lighter;
+  }
+}
+
+
